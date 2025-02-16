@@ -1,0 +1,150 @@
+.Biography-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 40px 0px;
+
+    @media screen and (max-width:1200px) {
+        padding: 40px 20px;
+    }
+
+    .flex-content {
+        display: flex;
+        justify-content: center;
+
+        @media screen and (max-width:990px) {
+            flex-direction: column;
+        }
+
+        .content {
+            margin-top: 2rem;
+            padding: 10px 50px;
+
+            @media screen and (max-width:1200px) {
+                padding: 10px 40px;
+
+            }
+
+            @media screen and (max-width: 990px) {
+                padding: 10px 0px;
+            }
+
+            .flex-text {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+
+                @media screen and (max-width:650px) {
+                    justify-content: center;
+                    padding-right: 30px;
+                }
+
+
+                div {
+                    width: 40px;
+                    height: 3px;
+                    background-color: var(--primaryColor);
+                }
+
+                h3 {
+                    color: var(--primaryColor);
+
+                }
+            }
+
+            .data {
+
+                h4 {
+                    font-size: 50px;
+                    font-weight: 700;
+
+                    @media screen and (max-width:1200px) {
+                        font-size: 42px;
+                    }
+
+                    @media screen and (max-width:650px) {
+                        font-size: 23px;
+                        text-align: center;
+                    }
+
+                }
+
+                p {
+                    line-height: 20px;
+                    margin-top: .7rem;
+                    color: rgb(46, 45, 45);
+                    text-align: justify;
+
+                    @media screen and (max-width:990px) {
+                        margin-top: .5rem;
+                    }
+
+                }
+            }
+
+        }
+
+    }
+
+    .section {
+        // margin-top: 3rem;
+        @media screen and (max-width:650px) {
+            margin-top: 1rem;
+        }
+
+        .heading {
+            font-size: 35px;
+            margin-bottom: 10px;
+
+            @media screen and (max-width:1200px) {
+                font-size: 30px;
+            }
+
+            @media screen and (max-width:650px) {
+                font-size: 20px;
+                margin-bottom: 5px;
+
+            }
+
+        }
+
+        p {
+            color: rgb(12, 11, 11);
+            line-height: 22px;
+            text-align: justify;
+
+            @media screen and (max-width:650px) {
+                font-size: 13px;
+            }
+
+            a {
+                color: var(--primaryColor);
+
+                @media screen and (max-width:650px) {
+                    font-size: 13px;
+                }
+            }
+
+            h2{
+                padding: 20px  0 10px 0;
+            }
+        }
+
+        .list {
+            margin: 10px 35px;
+
+            li {
+                list-style: disc;
+
+                a {
+                    color: #007bff;
+                    line-height: 22px;
+
+                    @media screen and (max-width:650px) {
+                        font-size: 13px;
+                    }
+
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,191 @@
+.footer-container {
+    background-color: #ededed;
+    padding: 40px 0px;
+
+    @media screen and (max-width: 650px) {
+        padding: 40px 20px;
+
+
+    }
+
+
+    .footer {
+        display: flex;
+        max-width: 1140px;
+        justify-content: space-between;
+        margin: 0 auto;
+
+        @media screen and (max-width: 1200px) {
+            flex-direction: column;
+            align-items: center;
+            max-width: 400px;
+
+        }
+
+        .contact {
+            @media screen and (max-width: 1200px) {
+                padding: 0 20px;
+            }
+
+            @media screen and (max-width: 410px) {
+                padding: 0px;
+            }
+
+            .heading {
+                font-size: 25px !important;
+                font-weight: 700 !important;
+                color: var(--primaryColor);
+
+                @media screen and (max-width: 650px) {
+                    font-size: 20px !important;
+
+                }
+            }
+
+            .para {
+                padding: 10px 0;
+
+
+            }
+
+            .info {
+                margin-top: 1rem;
+
+
+                .flex {
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+
+                    a {
+                        font-weight: 500;
+                        color: var(--primaryColor);
+                        cursor: pointer;
+                        font-size: 17px;
+                        line-break: anywhere;
+
+                    }
+                }
+
+                h3 {
+                    padding: 4px 0;
+
+                    @media screen and (max-width: 650px) {
+                        font-size: 17px !important;
+
+                    }
+
+                    a {
+                        font-weight: 500;
+                        color: var(--primaryColor);
+                        cursor: pointer;
+                        font-size: 17px;
+                        line-break: anywhere;
+
+                        @media screen and (max-width: 650px) {
+                            font-size: 15px !important;
+
+                        }
+
+                    }
+                }
+            }
+
+            .icons {
+                margin-top: 1.5rem;
+                display: flex;
+                gap: 1rem;
+
+                a {
+                    background-color: #fff;
+                    height: 35px;
+                    width: 35px;
+                    color: var(--primaryColor);
+                    text-align: center;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                }
+
+                a:hover {
+                    color: blue;
+                }
+            }
+        }
+
+        .links {
+            margin-top: 15px;
+
+            @media screen and (max-width: 650px) {
+                padding-right: 21px;
+
+            }
+
+            .heading {
+                font-size: 25px !important;
+                font-weight: 700 !important;
+                color: var(--primaryColor);
+
+                @media screen and (max-width: 650px) {
+                    font-size: 20px !important;
+
+                }
+            }
+
+            .r-icons {
+                padding-top: 10px;
+
+                .icon {
+                    display: flex;
+                    gap: .2rem;
+                    padding: 5px 0;
+
+                    .links_icons {
+                        color: var(--primaryColor);
+                    }
+
+                    a {
+                        color: black;
+
+                        @media screen and (max-width: 650px) {
+                            font-size: 15px !important;
+
+                        }
+
+                        &:hover {
+                            color: var(--primaryColor);
+                        }
+                    }
+
+
+                }
+            }
+
+        }
+
+    }
+
+}
+
+
+.footer-bar {
+    padding: 20px 10px;
+    background-color: var(--primaryColor);
+
+    p {
+        text-align: center;
+        color: white;
+
+        @media screen and (max-width: 650px) {
+            font-size: 12px;
+        }
+
+        a {
+            color: #fff;
+            font-weight: bold;
+        }
+
+    }
+}

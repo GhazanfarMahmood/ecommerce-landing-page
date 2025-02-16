@@ -1,0 +1,131 @@
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    background-color: var(--primaryColor);
+    color: white;
+    padding: 15px 10px;
+    font-size: 18px;
+    min-height: 70px;
+
+    @media screen and (max-width:1300px) {
+        font-size: 14px;
+    }
+
+    @media screen and (max-width:990px) {
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .left-section {
+        display: flex;
+        gap: 4rem;
+
+        a {
+            color: #fff;
+        }
+
+        @media screen and (max-width:1300px) {
+            gap: 2rem;
+        }
+
+        @media screen and (max-width:600px) {
+            display: none;
+        }
+
+        .locatin {
+            display: flex;
+            gap: .7rem;
+            align-items: center;
+
+            @media screen and (max-width:1300px) {
+                gap: .3rem;
+            }
+        }
+
+        .email {
+            display: flex;
+            gap: .7rem;
+            align-items: center;
+
+            @media screen and (max-width:1300px) {
+                gap: .4rem;
+
+            }
+
+        }
+
+    }
+
+    .right-section {
+        display: flex;
+        gap: 5rem;
+
+        @media screen and (max-width:1300px) {
+            gap: 2rem;
+        }
+
+        @media screen and (max-width:990px) {
+            padding-right: 125px;
+        }
+
+        @media screen and (max-width:600px) {
+            padding-right: 0px;
+        }
+
+        @media screen and (max-width: 358px) {
+            flex-direction: column;
+            gap: .2rem;
+            align-items: center;
+        }
+
+        a {
+            color: #fff;
+        }
+
+        .phone {
+            display: flex;
+            gap: .7rem;
+            align-items: center;
+
+            @media screen and (max-width:1300px) {
+                gap: .5rem;
+            }
+        }
+
+        .social {
+            display: flex;
+            gap: .7rem;
+            align-items: center;
+
+            @media screen and (max-width:1300px) {
+                gap: .5rem;
+            }
+
+            @media screen and (max-width:990px) {
+                gap: 1rem;
+            }
+
+            @media screen and (max-width:600px) {
+                gap: .5rem;
+            }
+
+            a {
+                color: #fff;
+            }
+        }
+    }
+
+    .icon {
+        font-size: 25px;
+
+        @media screen and (max-width:1300px) {
+            font-size: 22px;
+        }
+
+        @media screen and (max-width: 600px) {
+            font-size: 18px;
+        }
+    }
+}
