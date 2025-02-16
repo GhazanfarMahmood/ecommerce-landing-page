@@ -1,5 +1,5 @@
 import BioGraphy from "@/component/biography/BioGraphy";
-// import Contact from "@/component/contact/Contact";
+import Contact from "@/component/contact/Contact";
 import Footer from "@/component/footer/Footer";
 import Gallery from "@/component/gallery/Gallery";
 import Header from "@/component/header/Header";
@@ -20,7 +20,7 @@ export default function Home() {
      <Service />
      <Gallery />
      <Review />
-     {/* <Contact /> */}
+     <Contact />
      <Footer />
     </>
   );

@@ -1,25 +1,18 @@
+"use client";
+
 import React, { useState } from 'react'
-import Fade from 'react-reveal/Fade';
-import Jump from 'react-reveal/Jump';
-import Shake from 'react-reveal/Shake';
-import Recaptcha from "react-google-recaptcha"
 
 import { FaPhoneVolume } from 'react-icons/fa';
 import { FaEnvelopeOpenText } from 'react-icons/fa';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
-import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import './Contact.scss'
+// CSS LINK FOR CONTACT PAGE
+import '@/style/Contact-Style.scss'
 
-
-
-
-
-const Contact = (props) => {
-    const [recapcha, setRecapcha] = useState(false);
+const Contact = () => {
     const [enteredData, setEnteredData] = useState({
         name: "",
         email: "",
@@ -38,14 +31,7 @@ const Contact = (props) => {
             }
         })
     }
-    // This Function check recaptcha's value
-    function onChange(value) {
-        // console.log("Captcha value:", value);
-        if (value != null) {
-            setRecapcha(true)
-        }
-    }
-    // This Function checks the conditions on form and hit Post Api
+
     const sendMessage = (e) => {
         e.preventDefault();
 
@@ -69,54 +55,30 @@ const Contact = (props) => {
             }
             return
         }
-        if (recapcha != true) {
-            toast.warn("Please verify that you are not a robot.")
-            return
-        }
-        axios.post("https://firmtechservices.com/api/contact-form", {
-            name: enteredData.name,
-            email: enteredData.email,
-            phone: enteredData.phone,
-            subject: enteredData.subject,
-            message: enteredData.message,
-            email_id: props.data.id,
-            client_id: props.data.client?.id,
-            slug: `https://firmtechservices.com/${props.data.slug}`
-        })
-            .then((res) => {
-                toast.success(res.data.replace(/<[^>]+>/g, ''))
-                setTimeout(() => {
-                    window.location.reload(true)
-                }, 3000);
-            })
-            .catch((error) => {
-                console.log(error)
-                toast.error(error.message)
-            })
 
+        setEnteredData({
+            name: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+        })
     }
 
     return (
         <>
             <div className='contact-container'>
-                <Fade bottom>
                     <div className="content">
                         <div className="flex-text">
                             <div></div>
-                            <Shake duration={2000}>
-                                <h3>Keep In Touch</h3>
-                            </Shake>
+                            <h3>Keep In Touch</h3>
                         </div>
                         <div className="data">
                             <h4>Cont</h4>
-                            <Jump duration={2000}>
-                                <h4 className='act'>act</h4>
-                            </Jump>
+                            <h4 className='act'>act</h4>
                         </div>
                     </div>
-                </Fade>
                 <div className="flex-forms">
-                    <Fade left duration={2000}>
                         <div className="contact">
                             <div className="call">
                                 <div className='flex-bio'>
@@ -124,9 +86,7 @@ const Contact = (props) => {
                                 </div>
                                 <div className="flex-call">
                                     <h5>Call Us</h5>
-                                    <a href={`tel:${props.data.header.phone_no}`}>
-                                        {props.data.header.phone_no}
-                                    </a>
+                                    <a href="#">03074758481</a>
                                 </div>
                             </div>
                             <div className="call">
@@ -135,9 +95,7 @@ const Contact = (props) => {
                                 </div>
                                 <div className="flex-call">
                                     <h5 >Mail Us</h5>
-                                    <a href={`mailto:${props.data.header.email}`}>
-                                        {props.data.header.email}
-                                    </a>
+                                    <a href="#">rafiqinterviewwala@gmail.com</a>
                                 </div>
                             </div>
                             <div className="call">
@@ -145,40 +103,32 @@ const Contact = (props) => {
                                     <FaMapMarkerAlt className='icon' />
                                 </div>
                                 <div className="flex-call">
-                                    <h5 >Office Address</h5>
-                                    <a href={props.data.header.google_map}>{props.data.header.address}</a>
+                                    <h5>Office Address</h5>
+                                    <a href="#">Lahore, Pakistan</a>
                                 </div>
                             </div>
                             <div className="video-section">
-                                <iframe src={`https://www.youtube.com/embed/${props.data.contact.video_link}`}>
+                                <iframe src="https://www.youtube.com/embed/Rl37o-4Y-NA">
                                 </iframe>
                             </div>
                         </div>
-                    </Fade>
-                    <Fade right duration={2000}>
-                        <form className="form" onSubmit={sendMessage}>
-                            <div className="flex-input">
-                                <input type="text" name="name" value={enteredData.name} placeholder='Your Name' onChange={enteringData} />
-                                <input type="email" name="email" value={enteredData.email} placeholder='Your Email' onChange={enteringData} />
-                            </div>
-                            <div className="flex-input">
-                                <input type="number" name="phone" value={enteredData.phone} placeholder='Phone no' onChange={enteringData} />
-                                <input type="text" name="subject" value={enteredData.subject} placeholder='Subject' onChange={enteringData} />
-                            </div>
-                            <div className="textarea">
-                                <textarea name="message" value={enteredData.message} onChange={enteringData}></textarea>
-                            </div>
-                            <div className="recapcha">
-                                <Recaptcha
-                                    sitekey="6LfkMvMjAAAAADys8e0kNLeiENRfRqcbj3-KR075"
-                                    onChange={onChange}
-                                />
-                            </div>
-                            <div className="send-button">
-                                <button type='submit'>Send Message</button>
-                            </div>
-                        </form>
-                    </Fade>
+                    
+                    <form className="form" onSubmit={sendMessage}>
+                        <div className="flex-input">
+                            <input type="text" name="name" value={enteredData.name} placeholder='Your Name' onChange={enteringData} />
+                            <input type="email" name="email" value={enteredData.email} placeholder='Your Email' onChange={enteringData} />
+                        </div>
+                        <div className="flex-input">
+                            <input type="number" name="phone" value={enteredData.phone} placeholder='Phone no' onChange={enteringData} />
+                            <input type="text" name="subject" value={enteredData.subject} placeholder='Subject' onChange={enteringData} />
+                        </div>
+                        <div className="textarea">
+                            <textarea name="message" value={enteredData.message} onChange={enteringData}></textarea>
+                        </div>
+                        <div className="send-button">
+                            <button type='submit'>Send Message</button>
+                        </div>
+                    </form>
                 </div>
             </div>
             <ToastContainer />
