@@ -1,17 +1,13 @@
 import React from 'react';
 
 import { AiFillYoutube } from 'react-icons/ai';
-import { BsGlobe } from 'react-icons/bs';
 import { AiFillInstagram } from 'react-icons/ai';
-import { FaYelp } from 'react-icons/fa';
 import { FaFacebookF } from 'react-icons/fa';
 import { FaAngleRight } from 'react-icons/fa';
 import { BsTwitter } from 'react-icons/bs';
 
 // FOOTER STYLE CSS LINKS
 import "@/style/Footer-Style.scss"
-
-
 
 export default function Footer() {
     return (

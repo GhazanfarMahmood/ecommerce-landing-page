@@ -8,8 +8,6 @@ import Review from "@/component/review/Review";
 import Service from "@/component/services/Services";
 import Banner from "@/component/banner/Banner";
 
-
-
 export default function Home() {
   return (
     <>

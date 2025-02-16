@@ -2,8 +2,6 @@
 
 import "@/style/BioGraphy-Style.scss"
 
-
-
 export default function BioGraphy(){
     return (
         <>
